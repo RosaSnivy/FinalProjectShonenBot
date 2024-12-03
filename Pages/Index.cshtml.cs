@@ -1,19 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using final.Models;
 
 namespace FinalProjectShonenBot.Pages;
 
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly AppDbContext _context;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(AppDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
-    public void OnGet()
-    {
+    public IList<Anime> Anime { get;set; } = default!;
 
+    public async Task OnGetAsync()
+    {
+        Anime = await _context.Animes
+        .Include(p => p.Characters)
+        .ToListAsync();
     }
 }
