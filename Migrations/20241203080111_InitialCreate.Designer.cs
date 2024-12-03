@@ -10,7 +10,7 @@ using final.Models;
 namespace FinalProjectShonenBot.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241203070101_InitialCreate")]
+    [Migration("20241203080111_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,10 +26,6 @@ namespace FinalProjectShonenBot.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("AnimeName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

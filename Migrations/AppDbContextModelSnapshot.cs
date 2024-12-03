@@ -26,10 +26,6 @@ namespace FinalProjectShonenBot.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageURL")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("AnimeID");
 
                     b.ToTable("Animes");

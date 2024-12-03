@@ -418,5 +418,18 @@ public static class SeedData
                 CharImageURL = "img/Starrk.jpg",
             }
         };
+
+        context.Add(animeOne);
+        context.Add(animeTwo);
+        context.Add(animeThree);
+        context.Add(animeFour);
+        context.Add(animeFive);
+        context.Add(animeSix);
+        context.Add(animeSeven);
+        context.Add(animeEight);
+        context.Add(animeNine);
+        context.Add(animeTen);
+
+        context.SaveChanges();
     }
 }
