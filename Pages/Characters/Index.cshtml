@@ -13,8 +13,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th></th>            
             <th>
-                @Html.DisplayNameFor(model => model.Character[0].CharacterName)
+                Character Name
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Character[0].HP)
@@ -26,7 +27,7 @@
                 @Html.DisplayNameFor(model => model.Character[0].Durability)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Character[0].Anime.AnimeName)
+                Anime
             </th>
             <th></th>
         </tr>
@@ -34,6 +35,9 @@
     <tbody>
 @foreach (var item in Model.Character) {
         <tr>
+            <td width="20%">
+                <img src = @Html.DisplayFor(modelItem => item.CharImageURL) class="img-fluid">
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CharacterName)
             </td>

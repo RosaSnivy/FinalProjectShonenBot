@@ -22,7 +22,7 @@ namespace FinalProjectShonenBot.Pages_Characters
 
         [BindProperty(SupportsGet = true)]
         public int PageNum {get; set;} = 1;
-        public int PageSize {get; set;} = 10;
+        public int PageSize {get; set;} = 7;
         public int TotalPages {get; set;}
 
         public async Task OnGetAsync()
