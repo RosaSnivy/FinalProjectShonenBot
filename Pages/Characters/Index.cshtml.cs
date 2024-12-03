@@ -20,9 +20,17 @@ namespace FinalProjectShonenBot.Pages_Characters
 
         public IList<Character> Character { get;set; } = default!;
 
+        [BindProperty(SupportsGet = true)]
+        public int PageNum {get; set;} = 1;
+        public int PageSize {get; set;} = 10;
+        public int TotalPages {get; set;}
+
         public async Task OnGetAsync()
         {
-            Character = await _context.Characters.ToListAsync();
+            TotalPages = (int)Math.Ceiling(_context.Characters.Count()/(double)PageSize);
+
+            Character = await _context.Characters.Include(a => a.Anime)
+                .Skip((PageNum - 1) * PageSize).Take(PageSize).ToListAsync();
         }
     }
 }
