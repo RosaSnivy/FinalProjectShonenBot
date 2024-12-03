@@ -1,22 +1,22 @@
 @page
 @model FinalProjectShonenBot.Pages_Characters.IndexModel
+@using final.Models
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Shonen Bot</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead style="text-align:center;">
         <tr>
-            <th></th>            
             <th>
-                Character Name
-            </th>
+                Character
+            </th>            
             <th>
                 @Html.DisplayNameFor(model => model.Character[0].HP)
             </th>
@@ -29,17 +29,16 @@
             <th>
                 Anime
             </th>
-            <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="text-align:  center; vertical-align: middle;">
 @foreach (var item in Model.Character) {
         <tr>
             <td width="20%">
                 <img src = @Html.DisplayFor(modelItem => item.CharImageURL) class="img-fluid">
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CharacterName)
+                    <div class="img-caption d-none d-md-block" style="text-shadow: 2px 2px 2px black">
+                        <p class="fs-4">@Html.DisplayFor(modelItem => item.CharacterName)</p>
+                    </div>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HP)
@@ -50,8 +49,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Durability)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Anime.AnimeName)
+            <td width="15%">
+                <img src = @Html.DisplayFor(modelItem => item.Anime.AnimeImageURL) class="img-fluid">
+                <div class="img-caption d-none d-md-block" style="text-shadow: 2px 2px 2px black">
+                    <p class="fs-4">@Html.DisplayFor(modelItem => item.Anime.AnimeName)</p>
+                </div>
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CharacterID">Edit</a> |

@@ -16,7 +16,8 @@ namespace FinalProjectShonenBot.Migrations
                 {
                     AnimeID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    AnimeName = table.Column<string>(type: "TEXT", nullable: false)
+                    AnimeName = table.Column<string>(type: "TEXT", nullable: false),
+                    AnimeImageURL = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -16,43 +16,53 @@ public static class SeedData
 
         Anime animeOne = new()
         {
-            AnimeName = "Black Clover"
+            AnimeName = "Black Clover",
+            AnimeImageURL = "img/Clover.jpg"
         };
         Anime animeTwo = new()
         {
-            AnimeName = "Jujutsu Kaisen"
+            AnimeName = "Jujutsu Kaisen",
+            AnimeImageURL = "img/JJK.jpg"
         };
         Anime animeThree = new()
         {
-            AnimeName = "Dragon Ball"
+            AnimeName = "Dragon Ball",
+            AnimeImageURL = "img/DB.jpg"
         };
         Anime animeFour = new()
         {
-            AnimeName = "Demon Slayer"
+            AnimeName = "Demon Slayer",
+            AnimeImageURL = "img/DS.jpg"
         };
         Anime animeFive = new()
         {
-            AnimeName = "One Piece"
+            AnimeName = "One Piece",
+            AnimeImageURL = "img/OP.jpg"
         };
         Anime animeSix = new()
         {
-            AnimeName = "Naruto"
+            AnimeName = "Naruto",
+            AnimeImageURL = "img/Naruto.jpg"
         };
         Anime animeSeven = new()
         {
-            AnimeName = "Seven Deadly Sins"
+            AnimeName = "Seven Deadly Sins",
+            AnimeImageURL = "img/7DS.jpg"
         };
         Anime animeEight = new()
         {
-            AnimeName = "Hunter x Hunter"
+            AnimeName = "Hunter x Hunter",
+            AnimeImageURL = "img/HxH.jpg"
         };
         Anime animeNine = new()
         {
-            AnimeName = "Fairy Tail"
+            AnimeName = "Fairy Tail",
+            AnimeImageURL = "img/FT.jpg"
         };
         Anime animeTen = new()
         {
-            AnimeName = "Bleach"
+            AnimeName = "Bleach",
+            AnimeImageURL = "img/Bleach.jpg"
         };
 
         animeOne.Characters = new List<Character>() {

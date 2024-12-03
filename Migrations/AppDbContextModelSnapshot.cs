@@ -22,6 +22,10 @@ namespace FinalProjectShonenBot.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("AnimeImageURL")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("AnimeName")
                         .IsRequired()
                         .HasColumnType("TEXT");
