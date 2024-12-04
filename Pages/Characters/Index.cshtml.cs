@@ -28,9 +28,16 @@ namespace FinalProjectShonenBot.Pages_Characters
         [BindProperty(SupportsGet = true)]
         public string CurrentSort {get; set;} = string.Empty;
 
+        [BindProperty(SupportsGet = true)]
+        public string CurrentSearch {get; set;} = string.Empty;
+
         public async Task OnGetAsync()
         {
             var query = _context.Characters.Include(c => c.Anime).Select(c => c);
+            if (!string.IsNullOrEmpty(CurrentSearch))
+            {
+                query = query.Where(s => s.CharacterName.ToUpper().Contains(CurrentSearch.ToUpper()) || s.CharacterName.ToUpper().Contains(CurrentSearch.ToUpper()));
+            }
 
             switch (CurrentSort)
             {
