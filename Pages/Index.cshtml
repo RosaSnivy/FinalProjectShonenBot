@@ -45,9 +45,49 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<hr>
 <div>
     @foreach(var item in Model.Anime) {
         double characterCount = item.Characters.Count;
-        double completion = (characterCount/10);
+        double completion = ((characterCount/10)*5);
+        <div class="row">
+            <div class="col-4">
+                <img src = @Html.DisplayFor(modelItem => item.AnimeImageURL) class="img-fluid">
+            </div>
+            <div class="col-8">
+                <h3>
+                    @Html.DisplayFor(modelItem => item.AnimeName)
+                </h3>
+                <p>
+                    Completion Bar:
+                    <span>@String.Format("{0:F1}", completion) </span>
+                    @for(double i = 1; i < 6; i++)
+                    {
+                        if(completion >= i)
+                        {
+                            <i class="bi bi-square-fill" style="color: green;"></i>
+                        } else if(completion + 1 > i)
+                        {
+                            <i class="bi bi-square-half" style="color: green;"></i>
+                        } else
+                        {
+                            <i class="bi bi-square"></i>
+                        }
+                    }
+                </p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="@("#characters" + @item.AnimeID)">Show Characters</button>
+                <div class="collapse" id="@("characters" + @item.AnimeID)">
+                    <hr>
+                    @foreach(var r in item.Characters)
+                    {
+                        <h1>
+                            @Html.DisplayFor(modelItem => r.CharacterName)
+                            <img src = @Html.DisplayFor(modelItem => r.CharImageURL) class="img-fluid">
+                        </h1>
+                    }
+                </div>
+            </div>
+        </div>
+        <hr>
     }
 </div>
